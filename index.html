@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <!-- A container for displaying the fetched verse -->
+    <div id="verse-container">
+        <h2>Random Bible Verse</h2>
+        <p id="verse-content"></p>
+        <p id="verse"></p>
+    </div>
+
+    <!-- Script to fetch and display a random Bible verse -->
+    <script src="http://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
+    <script>
+        const API_KEY = '6a4400d50304cfc987811914e521fc27';
+        const verseElement = document.querySelector('#verse-content');
+
+        const BIBLE_ID = '61fd76eafa1577c2-02';
+        const VERSES = [
+            'JER.29.11',
+            'PSA.23',
+            // Add other verse references as needed
+        ];
+
+        const verseIndex = Math.floor(Math.random() * VERSES.length);
+        const verseID = VERSES[verseIndex];
+
+        getResults(verseID).then((data) => {
+            const passage = data.passages[0].content;
+
+            // Display the verse content in the designated HTML element
+            verseElement.textContent = passage;
+        });
+    </script>
 </body>
 
 </html>
