@@ -1,41 +1,32 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Daily Bible Verse</title>
 </head>
-
 <body>
-    <!-- A container for displaying the fetched verse -->
     <div id="verse-container">
-        <h2>Random Bible Verse</h2>
+        <h2>Daily Bible Verse</h2>
         <p id="verse-content"></p>
     </div>
 
-    <!-- Script to fetch and display a random Bible verse -->
-    <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
     <script>
-        const API_KEY = '6a4400d50304cfc987811914e521fc27'; // Replace 'YOUR_API_KEY' with your actual API key
-        const verseElement = document.querySelector('#verse-content');
-
-        const BIBLE_ID = '61fd76eafa1577c2-02';
-        const VERSES = [
-            'JER.29.11',
-            'PSA.23',
-            // Add other verse references as needed
+        // Predefined list of Bible verses
+        const bibleVerses = [
+            "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. - John 3:16",
+            "The Lord is my shepherd; I shall not want. - Psalm 23:1",
+            // Add more verses as needed
         ];
 
-        const verseIndex = Math.floor(Math.random() * VERSES.length);
-        const verseID = VERSES[verseIndex];
+        // Function to display a random verse
+        function displayRandomVerse() {
+            const verseElement = document.getElementById("verse-content");
+            const randomIndex = Math.floor(Math.random() * bibleVerses.length);
+            verseElement.textContent = bibleVerses[randomIndex];
+        }
 
-        getResults(verseID).then((data) => {
-            const passage = data.passages[0].content;
-
-            // Display the verse content in the designated HTML element
-            verseElement.textContent = passage;
-        });
+        // Call the function to display a verse when the page loads
+        displayRandomVerse();
     </script>
 </body>
-
 </html>
