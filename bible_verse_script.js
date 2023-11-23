@@ -1,8 +1,30 @@
-const API_KEY = 'ed1888c4b947db2e13d6acab4841fbd06340115b';
-const passageReference = 'John+11:35'; // Change this to the desired passage reference
+const verseElement = document.getElementById("verse-content");
 
-function fetchBiblePassage() {
-    const verseElement = document.getElementById("verse-content");
+// Get the Bible data from the loaded JSON file
+const bibleData = document.getElementById("bible-data").textContent;
+const parsedBibleData = JSON.parse(bibleData);
+
+// Function to get a random Bible verse
+function getRandomVerse() {
+    // Choose a random book
+    const randomBookIndex = Math.floor(Math.random() * parsedBibleData.books.length);
+    const randomBook = parsedBibleData.books[randomBookIndex];
+
+    // Choose a random chapter from the selected book
+    const randomChapterIndex = Math.floor(Math.random() * randomBook.chapters);
+    const chapterVerseCount = randomBook.verseCounts[randomChapterIndex];
+
+    // Choose a random verse from the selected chapter
+    const randomVerseIndex = Math.floor(Math.random() * chapterVerseCount) + 1;
+
+    // Form the passage reference
+    const passageReference = `${randomBook.name} ${randomChapterIndex + 1}:${randomVerseIndex}`;
+
+    fetchBiblePassage(passageReference);
+}
+
+function fetchBiblePassage(passageReference) {
+    const API_KEY = 'ed1888c4b947db2e13d6acab4841fbd06340115b';
 
     fetch(`https://api.esv.org/v3/passage/text/?q=${passageReference}&include-passage-references=false&include-short-copyright=false&include-verse-numbers=false&include-headings=false`, {
         headers: {
@@ -27,5 +49,5 @@ function fetchBiblePassage() {
         });
 }
 
-// Call the function to fetch the Bible passage when the page loads
-fetchBiblePassage();
+// Call the function to get a random Bible verse when the page loads
+getRandomVerse();
