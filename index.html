@@ -25,25 +25,15 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    const passageText = data.passages[0].replace(/\[(\d+)\]/, ''); // Remove verse number reference from the passage
-                    const verseReference = data.reference; // Get the dynamically generated verse reference
-                    const formattedText = `"${getVerseContent(passageText)}" - ${verseReference} ESV`;
+                    const passageText = data.passages[0];
+                    const verseReference = data.canonical; // Get the verse reference from the API response
+                    const formattedText = `"${passageText}" - ${verseReference} ESV`;
                     verseElement.textContent = formattedText;
                 })
                 .catch(error => {
                     console.error('Error fetching ESV passage:', error);
                     verseElement.textContent = "An error occurred while fetching the passage.";
                 });
-        }
-
-        // Function to extract only the verse content without additional information
-        function getVerseContent(text) {
-            // Remove additional information before the actual verse content
-            const startIndex = text.indexOf(' '); // Find the first space character
-            if (startIndex !== -1) {
-                return text.substring(startIndex + 1).trim(); // Return the content after the first space
-            }
-            return text; // Return the original text if extraction doesn't work as expected
         }
 
         // Call the function to fetch the Bible passage when the page loads
