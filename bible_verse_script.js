@@ -33,6 +33,7 @@ function fetchBiblePassage(passageReference) {
     })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             if (data && data.passages && data.passages.length > 0) {
                 const verseContent = data.passages[0].trim(); // Extract the verse content
                 const verseReference = data.canonical;
