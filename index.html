@@ -18,15 +18,17 @@
         function fetchBiblePassage() {
             const verseElement = document.getElementById("verse-content");
 
-            fetch('https://api.esv.org/v3/passage/text/?q=John+11:35', {
+            fetch('https://api.esv.org/v3/passage/text/?q=Psalm+107:1', {
                 headers: {
                     'Authorization': `Token ${API_KEY}`
                 }
             })
                 .then(response => response.json())
                 .then(data => {
-                    const passageText = data.passages[0]; // Extracting the text of the passage from the response
-                    verseElement.textContent = passageText; // Display the passage text in an element on your webpage
+                    const passageText = data.passages[0].replace(/\[(\d+)\]/, ''); // Remove verse number reference from the passage
+                    const verseReference = "Psalm 107:1 ESV"; // Correct verse reference for Psalm 107:1
+                    const formattedText = `"${passageText.trim()}" - ${verseReference}`;
+                    verseElement.textContent = formattedText;
                 })
                 .catch(error => {
                     console.error('Error fetching ESV passage:', error);
