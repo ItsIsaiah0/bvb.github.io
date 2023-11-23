@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Daily Bible Verse</title>
 </head>
+
 <body>
     <div id="verse-container">
         <h2>Daily Bible Verse</h2>
@@ -11,29 +13,31 @@
     </div>
 
     <script>
-        // Function to fetch a random Bible verse from ESV API
-        function fetchRandomVerse() {
-            const API_KEY = 'ed1888c4b947db2e13d6acab4841fbd06340115b';
+        const API_KEY = 'ed1888c4b947db2e13d6acab4841fbd06340115b';
+
+        function fetchBiblePassage() {
             const verseElement = document.getElementById("verse-content");
 
-            fetch('https://api.esv.org/v3/passage/text/?q=random', {
+            fetch('https://api.esv.org/v3/passage/text/?q=John+11:35', {
                 headers: {
                     'Authorization': `Token ${API_KEY}`
                 }
             })
-            .then(response => response.json())
-            .then(data => {
-                const randomVerse = data.passages[0];
-                verseElement.textContent = randomVerse;
-            })
-            .catch(error => {
-                console.error('Error fetching ESV verse:', error);
-                verseElement.textContent = "An error occurred while fetching the verse.";
-            });
+                .then(response => response.json())
+                .then(data => {
+                    const passageText = data.passages[0]; // Extracting the text of the passage from the response
+                    verseElement.textContent = passageText; // Display the passage text in an element on your webpage
+                })
+                .catch(error => {
+                    console.error('Error fetching ESV passage:', error);
+                    verseElement.textContent = "An error occurred while fetching the passage.";
+                });
         }
 
-        // Call the function to fetch a verse when the page loads
-        fetchRandomVerse();
+        // Call the function to fetch the Bible passage when the page loads
+        fetchBiblePassage();
+
     </script>
 </body>
+
 </html>
