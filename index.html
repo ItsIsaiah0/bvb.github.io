@@ -26,7 +26,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const passageText = data.passages[0].replace(/\[(\d+)\]/, ''); // Remove verse number reference from the passage
-                    const verseReference = data.reference; // Get the dynamically generated verse reference
+                    const verseReference = extractVerseReference(data.canonical); // Get the dynamically generated verse reference
                     const formattedText = `"${getVerseContent(passageText)}" - ${verseReference} ESV`;
                     verseElement.textContent = formattedText;
                 })
@@ -44,6 +44,17 @@
                 return text.substring(startIndex + 1).trim(); // Return the content after the first space
             }
             return text; // Return the original text if extraction doesn't work as expected
+        }
+
+        // Function to extract the verse reference
+        function extractVerseReference(canonical) {
+            const parts = canonical.split(':'); // Split the canonical string by ':'
+            if (parts.length >= 2) {
+                const book = parts[0];
+                const verse = parts[1];
+                return `${book} ${verse}`; // Return formatted verse reference
+            }
+            return 'Unknown Reference'; // Return a default value if extraction fails
         }
 
         // Call the function to fetch the Bible passage when the page loads
