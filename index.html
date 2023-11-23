@@ -11,22 +11,29 @@
     </div>
 
     <script>
-        // Predefined list of Bible verses
-        const bibleVerses = [
-            "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. - John 3:16",
-            "The Lord is my shepherd; I shall not want. - Psalm 23:1",
-            // Add more verses as needed
-        ];
-
-        // Function to display a random verse
-        function displayRandomVerse() {
+        // Function to fetch a random Bible verse from ESV API
+        function fetchRandomVerse() {
+            const API_KEY = 'ed1888c4b947db2e13d6acab4841fbd06340115b';
             const verseElement = document.getElementById("verse-content");
-            const randomIndex = Math.floor(Math.random() * bibleVerses.length);
-            verseElement.textContent = bibleVerses[randomIndex];
+
+            fetch('https://api.esv.org/v3/passage/text/?q=random', {
+                headers: {
+                    'Authorization': `Token ${API_KEY}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const randomVerse = data.passages[0];
+                verseElement.textContent = randomVerse;
+            })
+            .catch(error => {
+                console.error('Error fetching ESV verse:', error);
+                verseElement.textContent = "An error occurred while fetching the verse.";
+            });
         }
 
-        // Call the function to display a verse when the page loads
-        displayRandomVerse();
+        // Call the function to fetch a verse when the page loads
+        fetchRandomVerse();
     </script>
 </body>
 </html>
