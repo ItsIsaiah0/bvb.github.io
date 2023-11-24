@@ -10,7 +10,7 @@
 
     <script>
         // Fetching the random Bible verse
-        fetch('/random-verse')
+        fetch('https://bible-verse-background-backend.glitch.me/random-verse')
             .then(response => response.json())
             .then(data => {
                 const verseElement = document.getElementById('verse-content');
