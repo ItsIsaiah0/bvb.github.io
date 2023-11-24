@@ -1,4 +1,4 @@
-const config = require('./config');
+const API_KEY = config.apiKey;
 
 const verseElement = document.getElementById("verse-content");
 
@@ -26,7 +26,6 @@ function getRandomVerse() {
 }
 
 function fetchBiblePassage(passageReference) {
-    const API_KEY = config.apiKey;
 
     fetch(`https://api.esv.org/v3/passage/text/?q=${passageReference}&include-passage-references=false&include-short-copyright=false&include-verse-numbers=false&include-headings=false`, {
         headers: {
