@@ -1,4 +1,4 @@
-const API_KEY = config.apiKey;
+const API_KEY = process.env.API_KEY;
 
 const verseElement = document.getElementById("verse-content");
 
