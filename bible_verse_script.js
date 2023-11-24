@@ -1,3 +1,5 @@
+const config = require('./config');
+
 const verseElement = document.getElementById("verse-content");
 
 // Get the Bible data from the loaded JSON file
@@ -24,7 +26,7 @@ function getRandomVerse() {
 }
 
 function fetchBiblePassage(passageReference) {
-    const API_KEY = 'API_KEY';
+    const API_KEY = config.apiKey;
 
     fetch(`https://api.esv.org/v3/passage/text/?q=${passageReference}&include-passage-references=false&include-short-copyright=false&include-verse-numbers=false&include-headings=false`, {
         headers: {
