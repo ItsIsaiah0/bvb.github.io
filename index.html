@@ -6,28 +6,9 @@
 </head>
 
 <body>
-    <div id="verse-content"></div>
 
-    <script>
-        // Fetching the random Bible verse
-        fetch('https://bible-verse-background-backend.glitch.me/random-verse')
-            .then(response => response.json())
-            .then(data => {
-                const verseElement = document.getElementById('verse-content');
-                if (data && data.passages && data.passages.length > 0) {
-                    const verseContent = data.passages[0].trim(); // Extract the verse content
-                    const verseReference = data.canonical;
-                    const formattedText = `"${verseContent}" - ${verseReference}`;
-                    verseElement.textContent = formattedText;
-                } else {
-                    verseElement.textContent = "No passage found.";
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching Bible verse:', error);
-                document.getElementById('verse-content').textContent = "An error occurred while fetching the passage.";
-            });
-    </script>
+    <img src="http://itsisaiah0.pythonanywhere.com/get-generated-image" alt="Generated Image">
+
 </body>
 
 </html>
