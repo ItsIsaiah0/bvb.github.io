@@ -70,7 +70,7 @@ button:hover {
 @media (max-width: 767px) {
     select,
     button {
-        padding: 30px; /* Increase padding for mobile */
+        padding: 1000px; /* Increase padding for mobile */
         margin-bottom: 30px; /* Increase margin for mobile */
     }
 }
