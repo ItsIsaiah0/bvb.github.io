@@ -20,6 +20,7 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    font-size: 18px; /* Default font size */
 }
 
 /* Heading styles */
@@ -33,7 +34,6 @@ h1 {
 label {
     display: block;
     margin-bottom: 10px;
-    font-size: 16px; /* Increase label size */
 }
 
 /* Select and button styles */
@@ -71,4 +71,31 @@ button:hover {
 .instructions p {
     margin-bottom: 15px;
     font-size: 16px; /* Increase paragraph size */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .selection {
+        width: 90%; /* Adjust width for smaller screens */
+        font-size: 16px; /* Decrease font size for smaller screens */
+    }
+
+    /* Adjust other styles as needed for mobile devices */
+    h1 {
+        font-size: 22px; /* Adjust heading size */
+    }
+
+    select,
+    button {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .instructions h2 {
+        font-size: 18px; /* Adjust heading size */
+    }
+
+    .instructions p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
 }
