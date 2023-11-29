@@ -7,27 +7,33 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Full viewport height */
 }
 
 /* Section styles */
 .selection {
-    width: 80%; /* Adjust the width of the content */
+    width: 80%;
+    /* Adjust the width of the content */
     max-width: 600px;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    font-size: 18px; /* Default font size */
+    font-size: 18px;
+    /* Default font size */
 }
 
 /* Heading styles */
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 24px; /* Increase heading size */
+    font-size: 24px;
+    /* Increase heading size */
 }
 
 /* Label styles */
@@ -39,12 +45,15 @@ label {
 /* Select and button styles */
 select,
 button {
-    width: calc(100% - 40px); /* Adjust the width of input elements */
-    padding: 12px; /* Increase padding */
+    width: calc(100% - 40px);
+    /* Adjust the width of input elements */
+    padding: 12px;
+    /* Increase padding */
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 18px; /* Increase font size */
+    font-size: 18px;
+    /* Increase font size */
 }
 
 button {
@@ -65,37 +74,57 @@ button:hover {
 
 .instructions h2 {
     margin-bottom: 10px;
-    font-size: 20px; /* Increase heading size */
+    font-size: 20px;
+    /* Increase heading size */
 }
 
 .instructions p {
     margin-bottom: 15px;
-    font-size: 16px; /* Increase paragraph size */
+    font-size: 16px;
+    /* Increase paragraph size */
 }
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
     .selection {
-        width: 90%; /* Adjust width for smaller screens */
-        font-size: 16px; /* Decrease font size for smaller screens */
+        width: 90%;
+        /* Adjust width for smaller screens */
+        font-size: 16px;
+        /* Decrease font size for smaller screens */
+        margin: 0 auto;
+        /* Center horizontally */
+    }
+
+    /* Change layout to vertical for smaller screens */
+    .phone-selection,
+    .bible-version,
+    button {
+        width: 100%;
+        /* Full width for vertical layout */
+        margin-bottom: 15px;
     }
 
     /* Adjust other styles as needed for mobile devices */
     h1 {
-        font-size: 22px; /* Adjust heading size */
+        font-size: 22px;
+        /* Adjust heading size */
     }
 
     select,
     button {
-        padding: 10px; /* Adjust padding for smaller screens */
-        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+        font-size: 16px;
+        /* Adjust font size for smaller screens */
     }
 
     .instructions h2 {
-        font-size: 18px; /* Adjust heading size */
+        font-size: 18px;
+        /* Adjust heading size */
     }
 
     .instructions p {
-        font-size: 14px; /* Adjust paragraph size */
+        font-size: 14px;
+        /* Adjust paragraph size */
     }
 }
