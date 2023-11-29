@@ -6,12 +6,16 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
 }
 
 /* Section styles */
 .selection {
+    width: 80%; /* Adjust the width of the content */
     max-width: 600px;
-    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,23 +26,25 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px; /* Increase heading size */
 }
 
 /* Label styles */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 16px; /* Increase label size */
 }
 
 /* Select and button styles */
 select,
 button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    width: calc(100% - 40px); /* Adjust the width of input elements */
+    padding: 12px; /* Increase padding */
+    margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 18px; /* Increase font size */
 }
 
 button {
@@ -59,8 +65,10 @@ button:hover {
 
 .instructions h2 {
     margin-bottom: 10px;
+    font-size: 20px; /* Increase heading size */
 }
 
 .instructions p {
     margin-bottom: 15px;
+    font-size: 16px; /* Increase paragraph size */
 }
