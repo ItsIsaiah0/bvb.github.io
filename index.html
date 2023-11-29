@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Bible Verse Background</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 </head>
-
 <body>
+    <section class="selection">
+        <h1>Select Your Phone & Bible Version</h1>
 
-   
+        <div class="phone-selection">
+            <label for="phone-type">Choose Your iPhone:</label>
+            <select id="phone-type">
+                <option value="13-pro">iPhone 13 Pro</option>
+                <option value="13">iPhone 13</option>
+                <!-- Other phone options -->
+            </select>
+        </div>
 
+        <div class="bible-version">
+            <label for="bible-type">Choose Bible Version:</label>
+            <select id="bible-type">
+                <option value="esv">ESV</option>
+                <!-- Other Bible versions -->
+            </select>
+        </div>
+
+        <button id="download-btn">Download Shortcut</button>
+    </section>
+
+    <section class="instructions" style="display: none;">
+        <h2>Instructions:</h2>
+        <p>Follow these steps to set up the shortcut on your device...</p>
+        <!-- Include detailed instructions here -->
+    </section>
+
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
 </body>
-
 </html>
