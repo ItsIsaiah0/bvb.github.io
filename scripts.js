@@ -14,7 +14,7 @@ function generateShortcut() {
   
     if (shortcutLink) {
         // Redirect to the generated iCloud link when the button is clicked
-        window.location.href = shortcutLink;
+        window.open(shortcutLink, '_blank');
     } else {
         // If the link couldn't be generated, display an error message or handle it accordingly
         alert('Unable to generate the iOS shortcut link for the selected options.');
