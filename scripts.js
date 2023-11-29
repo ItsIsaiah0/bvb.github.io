@@ -19,10 +19,10 @@ document.getElementById('download-btn').addEventListener('click', function () {
 
 // Function to generate download link based on user selection
 function generateDownloadLink(phoneType, bibleVersion) {
-    if (phoneType === '13-pro' && bibleVersion === 'esv') {
+    if (phoneType === 'iPhone 13 Pro' && bibleVersion === 'ESV') {
         // For iPhone 13 Pro with ESV Bible version
         return 'https://www.icloud.com/shortcuts/27d9402cffa54697a3befb362e2a65c8';
-    } else if (phoneType === '13' && bibleVersion === 'esv') {
+    } else if (phoneType === 'iPhone 13' && bibleVersion === 'ESV') {
         // For iPhone 13 with ESV Bible version
         return 'https://www.icloud.com/shortcuts/27d9402cffa54697a3befb362e2a65c8';
         {
