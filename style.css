@@ -87,44 +87,35 @@ button:hover {
 /* Media query for mobile devices */
 @media (max-width: 768px) {
     .selection {
-        width: 90%;
-        /* Adjust width for smaller screens */
-        font-size: 16px;
-        /* Decrease font size for smaller screens */
-        margin: 0 auto;
-        /* Center horizontally */
+        width: 90%; /* Adjust width for smaller screens */
+        font-size: 16px; /* Decrease font size for smaller screens */
+        margin: 0 auto; /* Center horizontally */
     }
 
     /* Change layout to vertical for smaller screens */
     .phone-selection,
     .bible-version,
     button {
-        width: 100%;
-        /* Full width for vertical layout */
+        width: 100%; /* Full width for vertical layout */
         margin-bottom: 15px;
     }
 
     /* Adjust other styles as needed for mobile devices */
     h1 {
-        font-size: 22px;
-        /* Adjust heading size */
+        font-size: 22px; /* Adjust heading size */
     }
 
     select,
     button {
-        padding: 10px;
-        /* Adjust padding for smaller screens */
-        font-size: 16px;
-        /* Adjust font size for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
     }
 
     .instructions h2 {
-        font-size: 18px;
-        /* Adjust heading size */
+        font-size: 18px; /* Adjust heading size */
     }
 
     .instructions p {
-        font-size: 14px;
-        /* Adjust paragraph size */
+        font-size: 14px; /* Adjust paragraph size */
     }
 }
