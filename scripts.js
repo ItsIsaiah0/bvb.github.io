@@ -1,33 +1,28 @@
-// Function to handle button click event
-document.getElementById('download-btn').addEventListener('click', function () {
-    const phoneType = document.getElementById('phone-type').value;
-    const bibleVersion = document.getElementById('bible-type').value;
-
-    // Logic to generate the download link based on user selection
-    const downloadLink = generateDownloadLink(phoneType, bibleVersion);
-    const instructionsSection = document.querySelector('.instructions');
-
-    // Display instructions and the generated download link
-    instructionsSection.style.display = 'block';
-    instructionsSection.innerHTML = `
-        <h2>Instructions:</h2>
-        <p>Follow these steps to set up the shortcut on your ${phoneType} using ${bibleVersion} version.</p>
-        <a href="${downloadLink}" download>Download the Shortcut</a>
-        <!-- Include detailed instructions here -->
-    `;
-});
-
-// Function to generate download link based on user selection
-function generateDownloadLink(phoneType, bibleVersion) {
-    if (phoneType === 'iPhone 13 Pro' && bibleVersion === 'ESV') {
-        // For iPhone 13 Pro with ESV Bible version
-        return 'https://www.icloud.com/shortcuts/27d9402cffa54697a3befb362e2a65c8';
-    } else if (phoneType === 'iPhone 13' && bibleVersion === 'ESV') {
-        // For iPhone 13 with ESV Bible version
-        return 'https://www.icloud.com/shortcuts/27d9402cffa54697a3befb362e2a65c8';
-        {
-            // For future expansion or unsupported combinations
-            return 'https://placeholder-link.com';
-        }
+function generateShortcut() {
+    const iphoneType = document.getElementById('iphoneType').value;
+    const bibleTranslation = document.getElementById('bibleTranslation').value;
+  
+    let shortcutLink = '';
+  
+    // Replace this logic with your actual generation of the iOS shortcut link
+    // For this example, assuming the link is the same for both iPhone 13 Pro and iPhone 13
+    if (iphoneType === 'iPhone13Pro' || iphoneType === 'iPhone13') {
+      shortcutLink = 'https://www.icloud.com/shortcuts/27d9402cffa54697a3befb362e2a65c8';
+    } else {
+      // Handle other iPhone models if needed
     }
-}
+  
+    // Display the generated link in the shortcutInfo div
+    const shortcutInfo = document.getElementById('shortcutInfo');
+    if (shortcutLink) {
+      shortcutInfo.innerHTML = `
+        <h2>iOS Shortcut Information</h2>
+        <p>Download your custom iOS shortcut for ${iphoneType} using ${bibleTranslation} translation:</p>
+        <a href="${shortcutLink}" download>Download Shortcut</a>
+      `;
+    } else {
+      shortcutInfo.innerHTML = `
+        <p>Unable to generate the iOS shortcut link for the selected options.</p>
+      `;
+    }
+  }

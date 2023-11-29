@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bible Verse Background</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+  <meta charset="UTF-8">
+  <title>Bible Verse Background iOS Shortcut</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="selection">
-        <h1>Select Your Phone & Bible Version</h1>
+  <header>
+    <h1>Bible Verse Background iOS Shortcut</h1>
+    <p>Select your iPhone type and Bible translation:</p>
+    <div class="dropdowns">
+      <select id="iphoneType">
+        <option value="iPhone13Pro">iPhone 13 Pro</option>
+        <option value="iPhone13">iPhone 13</option>
+        <!-- Add more options based on available iPhone models -->
+      </select>
+      <select id="bibleTranslation">
+        <option value="ESV">English Standard Version (ESV)</option>
+        <!-- Add more options for other Bible translations -->
+      </select>
+      <button onclick="generateShortcut()">Get iOS Shortcut</button>
+    </div>
+  </header>
 
-        <div class="phone-selection">
-            <label for="phone-type">Choose Your iPhone:</label>
-            <select id="phone-type">
-                <option value="iPhone 13 Pro">iPhone 13 Pro</option>
-                <option value="iPhone 13">iPhone 13</option>
-                <!-- Other phone options -->
-            </select>
-        </div>
+  <main>
+    <div id="shortcutInfo">
+      <!-- Information about the iOS shortcut will be displayed here -->
+      <h2>iOS Shortcut Information</h2>
+      <p>Download your custom iOS shortcut below:</p>
+      <!-- Replace the placeholder below with your actual download link -->
+      <a href="your_shortcut_link_here" download>Download Shortcut</a>
+    </div>
+  </main>
 
-        <div class="bible-version">
-            <label for="bible-type">Choose Bible Version:</label>
-            <select id="bible-type">
-                <option value="ESV">ESV</option>
-                <!-- Other Bible versions -->
-            </select>
-        </div>
+  <footer>
+    <p>&copy; 2023 Bible Verse Background. All rights reserved.</p>
+  </footer>
 
-        <button id="download-btn">Download Shortcut</button>
-    </section>
-
-    <section class="instructions" style="display: none;">
-        <h2>Instructions:</h2>
-        <p>Follow these steps to set up the shortcut on your device...</p>
-        <!-- Include detailed instructions here -->
-    </section>
-
-    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
+  <script src="script.js" defer></script>
 </body>
 </html>
